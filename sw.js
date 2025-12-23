@@ -1,5 +1,5 @@
 // sw.js
-const CACHE_NAME = "homecharger-timer-v3"; // <- nosta numeroa aina kun haluat pakottaa päivityksen
+const CACHE_NAME = "homecharger-timer-v4"; // <- nosta numeroa aina kun haluat pakottaa päivityksen
 
 const ASSETS = [
   "./",
