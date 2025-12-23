@@ -116,9 +116,9 @@
     const m = minutes % 60;
     const timeStr = (h > 0) ? `${h} h ${m} min` : `${m} min`;
 
-    $("result").innerHTML =
-      `Tarvitset ajastuksen: <b>${timeStr}</b><br>` +
-      `(${cur}% → ${tar}% = ${diff}%)`;
+$("result").innerHTML =
+  `<b>Aseta ajastin:</b> ${timeStr}<br>` +
+  `<span class="muted">(${cur}% → ${tar}% = ${diff}%)</span>`;
   }
 
   // Laske-nappi
