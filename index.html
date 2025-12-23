@@ -80,6 +80,21 @@
     const $ = (id) => document.getElementById(id);
 
     function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+    <script>
+  const $ = (id) => document.getElementById(id);
+  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+  // Pikapainikkeet: aseta tavoite ja laske heti
+  document.querySelectorAll(".qbtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      $("targetPercent").value = btn.dataset.target;
+      $("calcBtn").click();
+    });
+  });
+
+  $("calcBtn").addEventListener("click", () => {
+    // ... (sun nykyinen laskentalogiikka jatkuu tästä)
+
 
     $("calcBtn").addEventListener("click", () => {
       let cur = Number($("currentPercent").value);
