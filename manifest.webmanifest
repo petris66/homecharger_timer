@@ -1,7 +1,7 @@
 {
   "name": "Kotilatauksen ajastin (v2)",
   "short_name": "Kotilataus",
- "start_url": "./?v=2",
+ "start_url": "./?v=4",
   "display": "standalone",
   "background_color": "#0b1220",
   "theme_color": "#0b1220",
