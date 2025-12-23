@@ -22,6 +22,32 @@
     .out { margin-top: 12px; line-height: 1.35; }
     .pill { display:inline-block; padding: 4px 10px; border-radius: 999px; background: rgba(34,197,94,.15); border: 1px solid rgba(34,197,94,.35); }
     .muted { opacity:.8; font-size: 13px; margin-top: 10px; }
+    .quick{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.qbtn{
+  flex: 1 1 80px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color:#e8eefc;
+  font-weight:700;
+}
+
+.qbtn:active{
+  transform: translateY(1px);
+}
+
+.qbtn[data-target="100"]{
+  border-color: rgba(34,197,94,.45);
+  background: rgba(34,197,94,.14);
+}
+
   </style>
 </head>
 
