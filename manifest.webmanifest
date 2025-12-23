@@ -1,5 +1,5 @@
 {
-  "name": "Kotilatauksen ajastin",
+  "name": "Kotilatauksen ajastin (v2)",
   "short_name": "Kotilataus",
  "start_url": "./?v=2",
   "display": "standalone",
