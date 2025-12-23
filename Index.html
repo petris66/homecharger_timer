@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kotilatauksen ajastin</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      max-width: 420px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    h1 { font-size: 20px; margin-bottom: 12px; }
+    label { font-size: 14px; display: block; margin-top: 12px; }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 6px;
+    }
+    button {
+      background: #111827;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 18px;
+      padding: 14px;
+      background: #f3f4f6;
+      border-radius: 12px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .ok {
+      color: #065f46;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .timer {
+      color: #92400e;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Kotilatauksen ajastin</h1>
+
+<label>Nykyinen akun varaustaso (%)</label>
+<input id="current" type="number" min="0" max="100" placeholder="Esim. 47">
+
+<label>Mihin asti lataat?</label>
+<select id="target">
+  <option value="80">80 %</option>
+  <option value="90">90 %</option>
+  <option value="100">100 %</option>
+</select>
+
+<button onclick="calculate()">Laske lataus</button>
+
+<div id="output" class="result" style="display:none;"></div>
+
+<script>
+  const MINUTES_PER_PERCENT = 3; // 5% = 15 min
+
+  function formatTime(minutes) {
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    if (h === 0) return `${m} min`;
+    if (m === 0) return `${h} h`;
+    return `${h} h ${m} min`;
+  }
+
+  function calculate() {
+    const current = Number(document.getElementById("current").value);
+    const target = Number(document.getElementById("target").value);
+    const out = document.getElementById("output");
+
+    if (!Number.isFinite(current) || current < 0 || current > 100) {
+      alert("Anna nykyinen varaustaso (0–100).");
+      return;
+    }
+
+    if (target <= current) {
+      out.style.display = "block";
+      out.innerHT
